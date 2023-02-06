@@ -1,4 +1,4 @@
-# Now for an (un)limited time only#
+# Now for an (un)limited time only!
 We'll throw in **automatic component proxying** in ADDITION to **the entire drone kernel!** Now **that's a deal you cant refuse!**
 
 # **OpenComputers** (oc) **kernel with automatic component proxying**
