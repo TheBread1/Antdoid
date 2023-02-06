@@ -10,5 +10,5 @@ drone1.setStatusText(tostring(port))
 
 while true do
   local _,_,from,port,_,message = computer.pullSignal("modem_message")
-  assert(load(message))()
+  if message == nil then computer.beep() else assert(load(message))() end
 end
