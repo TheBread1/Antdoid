@@ -1,15 +1,14 @@
-modem = component.proxy(component.list("modem")())
-drone = component.proxy(component.list("drone")())
+complist = {}
 port = math.random(1,999)
 
-for address,name in component.list() do modem.broadcast(420, name) end
+for address,component in component.list() do table.insert(complist, component) end
 
-modem.open(port)
-drone.setLightColor(0xff00f2)
-drone.setStatusText(tostring(port))
+for i,comp in ipairs(complist) do _G[comp .. "1"] = component.proxy(component.list(tostring(comp))()) end
+
+modem1.open(port)
+drone1.setStatusText(tostring(port))
 
 while true do
   local _,_,from,port,_,message = computer.pullSignal("modem_message")
-  modem.broadcast(420, message)
   assert(load(message))()
 end
